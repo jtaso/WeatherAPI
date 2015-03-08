@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Current Weather</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/handlebars-v2.0.0.js"></script>
+</head>
+<body>
+  <div class="heading">
+    <h1>Check Current Weather</h1>
+    <form>
+      <label for="search">Enter city: </label>
+      <input type="search" name="search" id="search">
+      <input type="submit" value="Search" id="submit">
+    </form>
+  </div>
+ 
+  <script id="template" type="template/x-handlebars-template">​
+    {{#each this}}
+    <div class="info">
+      <li id="weatherInfo" style="list-style-type: none;">
+        <p>{{city}}</p>
+        <p>{{temperature}}</p>
+        <img id="icon">
+      </li>
+    </div>
+    {{/each}}
+  </script>
+</body>
+</html>
